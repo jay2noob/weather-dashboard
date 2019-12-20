@@ -6,24 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">"
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="container text-center">
-        <h1>Weather App</h1>
-
-        <h2>Your weather </h2>
-        <div class="row">
-            <div class="well col-md-6 col-md-offset-3" id="infWrap">
-                <div id="wInfo"></div>
-                <button class="btn btn-info" id="temp"></button>
-                <div class="icon"></div>
-            </div>
-        </div>
+    <div class="heading-container">
+        <h2 class="heading">Get Current Weather</h2>
     </div>
 
+    <div class="container">
+        <div class="row wrap">
+            <h3 class="instruct">Enter City Name</h3>
+        </div>
+    
+    <div class="row">
+        <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
+        <button id="search" class="btn btn-primary">Search</button>
+    </div>
+    <div id="display"></div>
+    </div>
 
-
-  <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script2.js"></script>
 </body>
 </html>
