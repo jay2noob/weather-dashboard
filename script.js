@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#search").on("click", function() {
       
-      var city = $("#city").val();
+      var city = $(".city").val();
       
       if (city != ""){
           $.ajax({
@@ -10,26 +10,17 @@ $(document).ready(function() {
               type: "GET",
               dataType: "jsonp",
               success: function(data){
-                  console.log(data);
 
                   var info = show(data);
 
-
-
                   $("#display").html(info);
 
-
-
-                  $("#city").val();
+                  $(".city").val();
 
                   show()
-
-                  
                   
               }
           });
-      } else {
-          $("#error").html("Enter info!");
       }
   });
 });
@@ -41,13 +32,9 @@ function show(data) {
 
             "<h5><strong>Temperature</strong>: " + data.main.temp + " F</h5>" +
 
-            "<h5><strong>Pressure</strong>: " + data.main.pressure + "</h5>" +
+            "<h5><strong>Humidity</strong>: " + data.main.humidity + "%</h5>" +
 
-            "<h5><strong>Humidity</strong>: " + data.main.humidity + "</h5>" +
-
-            "<h5><strong>Min Temperature</strong>: " + data.main.temp_min + " F</h5>" +
-
-            "<h5><strong>Max Temperature</strong>: " + data.main.temp_max + " F</h5>" +
-
-            "<h5><strong>Wind speed</strong>: " + data.wind.speed + " mph</h5>"
+            "<h5><strong>Wind speed</strong>: " + data.wind.speed + " mph</h5>" +
+            
+            "<h5><strong>Symbol</strong>: " + data.weather[0].icon + " </h5>";
 }
