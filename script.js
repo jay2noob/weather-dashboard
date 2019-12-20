@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#submitWeather").on("click", function() {
+  $("#search").on("click", function() {
       
       var city = $("#city").val();
       
@@ -12,11 +12,11 @@ $(document).ready(function() {
               success: function(data){
                   console.log(data);
 
-                  var widget = show(data);
+                  var info = show(data);
 
 
 
-                  $("#show").html(widget);
+                  $("#display").html(info);
 
 
 
@@ -29,12 +29,25 @@ $(document).ready(function() {
               }
           });
       } else {
-          $("#error").html("Field cannot be empty");
+          $("#error").html("Enter info!");
       }
   });
 });
 
 function show(data) {
-  return "<h3><strong>Weather</strong>: "+ data.weather[0].main + "</h3>" +
-  "<h3><strong>Weather</strong>: "+ data.weather[0].description + "</h3>";
+  return "<h4>Current Weather for " + data.name + "," + data.sys.country + "</h4>" +
+
+            "<h5><strong>Weather</strong>: " + data.weather[0].main + "</h5>" +
+
+            "<h5><strong>Temperature</strong>: " + data.main.temp + " F</h5>" +
+
+            "<h5><strong>Pressure</strong>: " + data.main.pressure + "</h5>" +
+
+            "<h5><strong>Humidity</strong>: " + data.main.humidity + "</h5>" +
+
+            "<h5><strong>Min Temperature</strong>: " + data.main.temp_min + " F</h5>" +
+
+            "<h5><strong>Max Temperature</strong>: " + data.main.temp_max + " F</h5>" +
+
+            "<h5><strong>Wind speed</strong>: " + data.wind.speed + " mph</h5>"
 }

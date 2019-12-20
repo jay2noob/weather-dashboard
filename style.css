@@ -13,10 +13,8 @@ h2 {
     font-weight: 600;
 }
 
-h3 {
+.wrap h3 {
     text-align: center;
+    color: blue;
 }
 
-.container {
-    
-}
