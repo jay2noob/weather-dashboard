@@ -6,7 +6,7 @@ $(document).ready(function() {
       if (city != ""){
           $.ajax({
 
-              url: "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=2a9470a7d7a866b6c6bc905d5edac7cd&units=imperial",
+              url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=2a9470a7d7a866b6c6bc905d5edac7cd&units=imperial",
               type: "GET",
               dataType: "jsonp",
               success: function(data){
@@ -26,11 +26,11 @@ $(document).ready(function() {
 });
 
 function show(data) {
-  return "<h4>Current Weather for " + data.name + "," + data.sys.country + "</h4>" +
+  return "<h4>" + data.name + "," + data.sys.country + "</h4>" +
 
             "<h5><strong>Weather</strong>: " + data.weather[0].main + "</h5>" +
 
-            "<h5><strong>Temperature</strong>: " + data.main.temp + " F</h5>" +
+            "<h5><strong>Temperature</strong>: " + data.main.temp + " &deg;F</h5>" +
 
             "<h5><strong>Humidity</strong>: " + data.main.humidity + "%</h5>" +
 
@@ -38,3 +38,4 @@ function show(data) {
             
             "<h5><strong>Symbol</strong>: " + data.weather[0].icon + " </h5>";
 }
+
