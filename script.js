@@ -8,7 +8,7 @@ $(document).ready(function() {
 
               url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=2a9470a7d7a866b6c6bc905d5edac7cd&units=imperial",
               type: "GET",
-              dataType: "jsonp",
+              dataType: "json",
               success: function(data){
 
                   var info = show(data);
@@ -38,4 +38,6 @@ function show(data) {
             
             "<h5><strong>Symbol</strong>: " + data.weather[0].icon + " </h5>";
 }
+
+
 
